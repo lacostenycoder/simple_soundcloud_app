@@ -1,0 +1,2 @@
+module SoundcloudQueryHelper
+end

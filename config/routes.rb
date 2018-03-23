@@ -1,7 +1,6 @@
 Rails.application.routes.draw do
-  resources :soundcloud_query
+  resources :soundcloud_queries
 
-  root 'soundcloud_query#index'
-
+  root 'soundcloud_queries#index'
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end

@@ -4,21 +4,18 @@ class SoundcloudQueriesController < ApplicationController
   end
 
   def index
-    @user = SoundcloudUser.find(3)
-    @user_hash = YAML::load(@user.user_hash)
+    @user = SoundcloudUser.all
   end
 
   def create
-    @user_url = params[:soundcloud_url]
-    @soundcloud_user = SoundcloudUser.new
-    @query = Query.new
-    @user = @query.query_user(@user_url)
-    @soundcloud_user.user_name = @user.username
-    @soundcloud_user.user_hash = @user
-    @soundcloud_user.save
+    sc_user_data = Query.new.query_user params[:soundcloud_url]
+    @soundcloud_user = SoundcloudUser.create({
+  	 	username: sc_user_data[:username],
+  		user_hash: JSON.parse(sc_user_data.to_json).symbolize_keys
+  	})
   end
 
   def show
-
+    @soundcloud_user = SoundcloudUser.find params[:id]
   end
 end

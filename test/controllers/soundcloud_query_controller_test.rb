@@ -2,17 +2,17 @@ require 'test_helper'
 
 class SoundcloudQueryControllerTest < ActionDispatch::IntegrationTest
   test "should get new" do
-    get soundcloud_query_new_url
+    get new_soundcloud_query_path
     assert_response :success
   end
 
   test "should get index" do
-    get soundcloud_query_index_url
+    get soundcloud_queries_path
     assert_response :success
   end
 
   test "should get show" do
-    get soundcloud_query_show_url
+    get soundcloud_query_path(SoundcloudUser.first.id)
     assert_response :success
   end
 

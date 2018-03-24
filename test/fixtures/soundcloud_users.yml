@@ -2,6 +2,10 @@
 
 one:
   user_name: user_1
+  user_hash:
+    permalink_url: 'http://example.com'
 
 two:
   user_name: user_2
+  user_hash:
+    permalink_url: 'http://example.com'

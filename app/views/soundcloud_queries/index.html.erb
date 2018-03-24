@@ -1,3 +1,10 @@
 <h1>SoundcloudQuery#index</h1>
 <%= link_to 'New Query', '/soundcloud_queries/new' %>
-<%= @user_hash %>
+<hr>
+<% @users.each do |u| %>
+	<%= link_to u.user_hash[:permalink_url], target: '_blank' do %>
+		<div>	Soundcloudu username: <%= u.user_name  %></div>
+		<div>	Soundcloudu url: <%= u.user_hash[:permalink_url]%></div>
+		<br>
+	<% end %>
+<% end %>

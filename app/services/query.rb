@@ -6,8 +6,7 @@ class Query
   end
 
   def query_user(user_url)
-    @user_url = user_url
-    @user = @client.get('/resolve', :url => @user_url)
+    @client.get('/resolve', :url => user_url)
   end
 
   def get_user(username)

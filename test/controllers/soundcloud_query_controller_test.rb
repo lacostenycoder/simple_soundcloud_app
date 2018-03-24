@@ -16,4 +16,9 @@ class SoundcloudQueryControllerTest < ActionDispatch::IntegrationTest
     assert_response :success
   end
 
+  test "should post create" do
+    post '/soundcloud_queries', params: { username:'lacostenyc' }
+    assert_response :success
+  end
+
 end
